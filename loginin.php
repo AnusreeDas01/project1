@@ -1,10 +1,7 @@
 <?php
 if(isset($_POST['login_btn'])){
     session_start();
-        // servername => localhost
-        // username => root
-        // password => empty
-        // database name => phonebook1
+        
         $conn = mysqli_connect("localhost", "root", "", "project");
           
         // Check connection

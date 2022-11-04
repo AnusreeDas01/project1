@@ -214,10 +214,10 @@ form .btn input[type="submit"]{
             <div class="form-inner">
                <form action="#" class="login">
                   <div class="field">
-                     <input type="text" placeholder="Email Address/Phone Number" required>
+                     <input type="text" placeholder="Email Address/Phone Number" name="username" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Password" required>
+                     <input type="password" placeholder="Password" name="password" required>
                   </div>
                   <div class="pass-link">
                      <a href="#">Forgot password?</a>
@@ -232,13 +232,13 @@ form .btn input[type="submit"]{
                </form>
                <form action="#" class="signup">
                   <div class="field">
-                     <input type="text" placeholder="Email Address" required>
+                     <input type="text" placeholder="Email Address/Phone Number" name="username" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Password" required>
+                     <input type="password" placeholder="Password" name="password" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Confirm password" required>
+                     <input type="password" placeholder="Confirm password" name="password" required>
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
