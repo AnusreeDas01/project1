@@ -20,7 +20,7 @@ echo '
 
             <ul>
                 <li class="item"><a href="#">Home</a></li>
-                <li class="item"><a href="#">About Us</a></li>';
+                <li class="item"><a href="contactus.php">Contact Us</a></li>';
                 error_reporting(0);
                 session_start();
                 $name=$_SESSION['name'];
@@ -99,47 +99,7 @@ echo '
                 </div>
             </div>
         </section>
-        <section id="client-section">
-            <h1 class="h-primary center">Our Clients</h1>
-            <div id="clients">
-                <div class="client-item">
-                    <img src="img/logo1.jpg" alt="">
-                </div>
-                <div class="client-item">
-                    <img src="img/logo2.jpg" alt="">
-                </div>
-                <div class="client-item">
-                    <img src="img/logo3.png" alt="">
-                </div>
-                <div class="client-item">
-                    <img src="img/logo4.png" alt="">
-                </div>
-            </div>
-        </section>
 
-        <section id="contact">
-            <h1 class="h-primary center">Contact Us</h1>
-            <div id="contact-box">
-                <form action="">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" name="name" id="name" placeholder="Enter your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" placeholder="Enter your email">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone number">Phone Number:</label>
-                        <input type="phone" name="phone number" id="phone number" placeholder="Enter your phone number">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea name="message" id="message" cols="0" rows="0"></textarea>
-                    </div>
-                </form>
-            </div>
-        </section>
 
         <footer>
             <div class="center">

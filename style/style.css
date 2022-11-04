@@ -6,6 +6,12 @@
     font-family: 'Baloo Bhai 2', cursive;
 }
 
+body{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+  }
+
 /* CSS Variables
 :root {
 --navbar-height: 59px;
