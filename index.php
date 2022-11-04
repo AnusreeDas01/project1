@@ -20,7 +20,7 @@ echo '
 
             <ul>
                 <li class="item"><a href="#">Home</a></li>
-                <li class="item"><a href="contactus.php">Contact Us</a></li>';
+                <li class="item"><a href="#">About Us</a></li>';
                 error_reporting(0);
                 session_start();
                 $name=$_SESSION['name'];
