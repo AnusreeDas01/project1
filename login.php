@@ -1,271 +1,314 @@
 <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<title> Responsive Login and Signup Form </title>-->
 
-<html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Login and Registration Form in HTML | CodingNepal</title>
-      
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-      <style>
-            @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-html,body{
-  display: grid;
-  height: 100%;
-  width: 100%;
-  place-items: center;
-  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+    column-gap: 30px;
 }
-::selection{
-  background: #fa4299;
-  color: #fff;
+.form{
+    position: absolute;
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 6px;
+    background: #FFF;
 }
-.wrapper{
-  overflow: hidden;
-  max-width: 390px;
-  background: #fff;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+.form.signup{
+    opacity: 0;
+    pointer-events: none;
 }
-.wrapper .title-text{
-  display: flex;
-  width: 200%;
+.forms.show-signup .form.signup{
+    opacity: 1;
+    pointer-events: auto;
 }
-.wrapper .title{
-  width: 50%;
-  font-size: 35px;
-  font-weight: 600;
-  text-align: center;
-  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+.forms.show-signup .form.login{
+    opacity: 0;
+    pointer-events: none;
 }
-.wrapper .slide-controls{
-  position: relative;
-  display: flex;
-  height: 50px;
-  width: 100%;
-  overflow: hidden;
-  margin: 30px 0 10px 0;
-  justify-content: space-between;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
+header{
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
 }
-.slide-controls .slide{
-  height: 100%;
-  width: 100%;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  text-align: center;
-  line-height: 48px;
-  cursor: pointer;
-  z-index: 1;
-  transition: all 0.6s ease;
+form{
+    margin-top: 30px;
 }
-.slide-controls label.signup{
-  color: #000;
+.form .field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
 }
-.slide-controls .slider-tab{
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  left: 0;
-  z-index: 0;
-  border-radius: 5px;
-  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
-  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+.field input,
+.field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
 }
-input[type="radio"]{
-  display: none;
+.field input{
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid#CACACA;
 }
-#signup:checked ~ .slider-tab{
-  left: 50%;
+.field input:focus{
+    border-bottom-width: 2px;
 }
-#signup:checked ~ label.signup{
-  color: #fff;
-  cursor: default;
-  user-select: none;
+.eye-icon{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #8b8b8b;
+    cursor: pointer;
+    padding: 5px;
 }
-#signup:checked ~ label.login{
-  color: #000;
+.field button{
+    color: #fff;
+    background-color: #0171d3;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
-#login:checked ~ label.signup{
-  color: #000;
+.field button:hover{
+    background-color: #016dcb;
 }
-#login:checked ~ label.login{
-  cursor: default;
-  user-select: none;
+.form-link{
+    text-align: center;
+    margin-top: 10px;
 }
-.wrapper .form-container{
-  width: 100%;
-  overflow: hidden;
+.form-link span,
+.form-link a{
+    font-size: 14px;
+    font-weight: 400;
+    color: #232836;
 }
-.form-container .form-inner{
-  display: flex;
-  width: 200%;
+.form a{
+    color: #0171d3;
+    text-decoration: none;
 }
-.form-container .form-inner form{
-  width: 50%;
-  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+.form-content a:hover{
+    text-decoration: underline;
 }
-.form-inner form .field{
-  height: 50px;
-  width: 100%;
-  margin-top: 20px;
+.line{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #d4d4d4;
 }
-.form-inner form .field input{
-  height: 100%;
-  width: 100%;
-  outline: none;
-  padding-left: 15px;
-  border-radius: 5px;
-  border: 1px solid lightgrey;
-  border-bottom-width: 2px;
-  font-size: 17px;
-  transition: all 0.3s ease;
+.line::before{
+    content: 'Or';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    color: #8b8b8b;
+    padding: 0 15px;
 }
-.form-inner form .field input:focus{
-  border-color: #fc83bb;
-  /* box-shadow: inset 0 0 3px #fb6aae; */
+.media-options a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.form-inner form .field input::placeholder{
-  color: #999;
-  transition: all 0.3s ease;
+a.facebook{
+    color: #fff;
+    background-color: #4267b2;
 }
-form .field input:focus::placeholder{
-  color: #b3b3b3;
+a.facebook .facebook-icon{
+    height: 28px;
+    width: 28px;
+    color: #0171d3;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
 }
-.form-inner form .pass-link{
-  margin-top: 5px;
+.facebook-icon,
+img.google-img{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
 }
-.form-inner form .signup-link{
-  text-align: center;
-  margin-top: 30px;
+img.google-img{
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
 }
-.form-inner form .pass-link a,
-.form-inner form .signup-link a{
-  color: #fa4299;
-  text-decoration: none;
+a.google{
+    border: 1px solid #CACACA;
 }
-.form-inner form .pass-link a:hover,
-.form-inner form .signup-link a:hover{
-  text-decoration: underline;
+a.google span{
+    font-weight: 500;
+    opacity: 0.6;
+    color: #232836;
 }
-form .btn{
-  height: 50px;
-  width: 100%;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-}
-form .btn .btn-layer{
-  height: 100%;
-  width: 300%;
-  position: absolute;
-  left: -100%;
-  background: -webkit-linear-gradient(right, #a445b2, #fa4299, #a445b2, #fa4299);
-  border-radius: 5px;
-  transition: all 0.4s ease;;
-}
-form .btn:hover .btn-layer{
-  left: 0;
-}
-form .btn input[type="submit"]{
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  position: relative;
-  background: none;
-  border: none;
-  color: #fff;
-  padding-left: 0;
-  border-radius: 5px;
-  font-size: 20px;
-  font-weight: 500;
-  cursor: pointer;
-}
-      </style>
 
-   </head>
-   <body>
-      <div class="wrapper">
-         <div class="title-text">
-            <div class="title login">
-               Login Form
+@media screen and (max-width: 400px) {
+    .form{
+        padding: 20px 10px;
+    }
+    
+}
+
+        </style>
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+                        
+    </head>
+    <body>
+        <section class="container forms">
+            <div class="form login">
+                <div class="form-content">
+                    <header>Login</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="email" placeholder="Email" class="input">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" placeholder="Password" class="password">
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+
+                        <div class="form-link">
+                            <a href="#" class="forgot-pass">Forgot password?</a>
+                        </div>
+
+                        <div class="field button-field">
+                            <button>Login</button>
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="media-options">
+                    <a href="#" class="field facebook">
+                        <i class='bx bxl-facebook facebook-icon'></i>
+                        <span>Login with Facebook</span>
+                    </a>
+                </div>
+
+                <div class="media-options">
+                    <a href="#" class="field google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" alt="" class="google-img">
+                        <span>Login with Google</span>
+                    </a>
+                </div>
+
             </div>
-            <div class="title signup">
-               Signup Form
+
+            <!-- Signup Form -->
+
+            <div class="form signup">
+                <div class="form-content">
+                    <header>Signup</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="email" placeholder="Email" class="input">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" placeholder="Create password" class="password">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" placeholder="Confirm password" class="password">
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+
+                        <div class="field button-field">
+                            <button>Signup</button>
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="media-options">
+                    <a href="#" class="field facebook">
+                        <i class='bx bxl-facebook facebook-icon'></i>
+                        <span>Login with Facebook</span>
+                    </a>
+                </div>
+
+                <div class="media-options">
+                    <a href="#" class="field google">
+                        <img src="#" alt="" class="google-img">
+                        <span>Login with Google</span>
+                    </a>
+                </div>
+
             </div>
-         </div>
-         <div class="form-container">
-            <div class="slide-controls">
-               <input type="radio" name="slide" id="login" checked>
-               <input type="radio" name="slide" id="signup">
-               <label for="login" class="slide login">Login</label>
-               <label for="signup" class="slide signup">Signup</label>
-               <div class="slider-tab"></div>
-            </div>
-            <div class="form-inner">
-               <form action="#" class="login">
-                  <div class="field">
-                     <input type="text" placeholder="Email Address/Phone Number" name="username" required>
-                  </div>
-                  <div class="field">
-                     <input type="password" placeholder="Password" name="password" required>
-                  </div>
-                  <div class="pass-link">
-                     <a href="#">Forgot password?</a>
-                  </div>
-                  <div class="field btn">
-                     <div class="btn-layer"></div>
-                     <input type="submit" value="Login">
-                  </div>
-                  <div class="signup-link">
-                     Not a member? <a href="">Signup now</a>
-                  </div>
-               </form>
-               <form action="#" class="signup">
-                  <div class="field">
-                     <input type="text" placeholder="Email Address/Phone Number" name="username" required>
-                  </div>
-                  <div class="field">
-                     <input type="password" placeholder="Password" name="password" required>
-                  </div>
-                  <div class="field">
-                     <input type="password" placeholder="Confirm password" name="password" required>
-                  </div>
-                  <div class="field btn">
-                     <div class="btn-layer"></div>
-                     <input type="submit" value="Signup">
-                  </div>
-               </form>
-            </div>
-         </div>
-      </div>
-      <script>
-         const loginText = document.querySelector(".title-text .login");
-         const loginForm = document.querySelector("form.login");
-         const loginBtn = document.querySelector("label.login");
-         const signupBtn = document.querySelector("label.signup");
-         const signupLink = document.querySelector("form .signup-link a");
-         signupBtn.onclick = (()=>{
-           loginForm.style.marginLeft = "-50%";
-           loginText.style.marginLeft = "-50%";
-         });
-         loginBtn.onclick = (()=>{
-           loginForm.style.marginLeft = "0%";
-           loginText.style.marginLeft = "0%";
-         });
-         signupLink.onclick = (()=>{
-           signupBtn.click();
-           return false;
-         });
-      </script>
-   </body>
+        </section>
+
+        <!-- JavaScript -->
+        <script>
+             const forms = document.querySelector(".forms"),
+      pwShowHide = document.querySelectorAll(".eye-icon"),
+      links = document.querySelectorAll(".link");
+
+pwShowHide.forEach(eyeIcon => {
+    eyeIcon.addEventListener("click", () => {
+        let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+        
+        pwFields.forEach(password => {
+            if(password.type === "password"){
+                password.type = "text";
+                eyeIcon.classList.replace("bx-hide", "bx-show");
+                return;
+            }
+            password.type = "password";
+            eyeIcon.classList.replace("bx-show", "bx-hide");
+        })
+        
+    })
+})      
+
+links.forEach(link => {
+    link.addEventListener("click", e => {
+       e.preventDefault(); //preventing form submit
+       forms.classList.toggle("show-signup");
+    })
+})
+
+        </script>
+    </body>
 </html>
