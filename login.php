@@ -19,7 +19,7 @@ body{
   width: 100%;
   background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
 }
-.show-btn{
+/* .show-btn{
   background: #fff;
   padding: 10px 20px;
   font-size: 20px;
@@ -27,37 +27,37 @@ body{
   color: #3498db;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
-.show-btn, .container{
+} */
+/* .show-btn, .container{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
-input[type="checkbox"]{
+/* input[type="checkbox"]{
   display: none;
-}
+} */
 .container{
-  display: none;
+  /* display: none; */
   background: #fff;
   width: 410px;
   padding: 30px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
-#show:checked ~ .container{
+/* #show:checked ~ .container{
   display: block;
-}
-.container .close-btn{
+} */
+/* .container .close-btn{
   position: absolute;
   right: 20px;
   top: 15px;
   font-size: 18px;
   cursor: pointer;
-}
-.container .close-btn:hover{
+} */
+/* .container .close-btn:hover{
   color: #3498db;
-}
+} */
 .container .text{
   font-size: 35px;
   font-weight: 600;
@@ -138,16 +138,16 @@ form .signup-link a:hover{
 }
       </style>
 
-
+      
    </head>
    <body>
-      <!-- <div class="center">
-         <input type="checkbox" id="show">
-         <label for="show" class="show-btn">View Form</label> -->
-         <!-- <div class="container">
-            <label for="show" class="close-btn fas fa-times" title="close"></label> -->
+      <div class="center">
+         <!-- <input type="checkbox" id="show"> -->
+         <!-- <label for="show" class="show-btn">View Form</label> -->
+         <div class="container">
+            <!-- <label for="show" class="close-btn fas fa-times" title="close"></label> -->
             <div class="text">
-               Login Form
+               Login
             </div>
             <form action="#">
                <div class="data">
@@ -169,7 +169,7 @@ form .signup-link a:hover{
                   Not a member? <a href="#">Signup now</a>
                </div>
             </form>
-         <!-- </div> -->
-      <!-- </div> -->
+         </div>
+      </div>
    </body>
 </html>
