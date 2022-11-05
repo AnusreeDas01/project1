@@ -5,46 +5,153 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+    column-gap: 30px;
+}
+.form{
+    position: absolute;
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 6px;
+    background: #FFF;
+}
+header{
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+}
+form{
+    margin-top: 30px;
+}
+.form .field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+.field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+.field button{
+    color: #fff;
+    background-color: #0171d3;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.field button:hover{
+    background-color: #016dcb;
+}
+    </style>
+
 </head>
 <body>
-    <h2>This is HTML forms</h2>
-    <form action="backend.php">
-        <div>
-        <label for="Name">Name</label>
-            <input type="text" name="my name" id="Name">
-        </div>
-        <br>
-        <div>
-        <label for="ID">ID</label>
-            <input type="text" name="my ID" id="ID">
-        </div>
-        <br>
-        <div>
-        <label for="Date">Purchase Date</label>
-            <input type="date" name="my date" id="Date">
-        </div>
-        <br>
-        <div>
-        <label for="Date">Expiry Date</label>
-            <input type="date" name="my date" id="Date">
-        </div>
-        <br>
-        <div>
-        <label for="img">Bill</label>
-            <input type="image" name="Bill" id="Bill">
-        </div>
-        <br>
-        <div>
-        <label for="Write Note">Note</label>
-            <br><textarea name="my text" cols="50" rows="10" id="Write Note"></textarea>
-        </div>
-        <br>
-        
-        <div>
-            <input type="submit" value="Submit Now">
-            <input type="reset" value="Reset">
-        </div>
-        
-    </form>
+<section class="container">
+    <div class="form">
+    <div class="form-content">
+                    <header>Add New</header>
+	<table>
+		<form action="register.php">
+			<tr>
+				<td>
+                <label for="name">Name</label>
+				</td>
+				<td>
+                <input type="text" name="name" id="name">
+				</td>
+			</tr>
+			<tr>
+				<td>
+                    <label for="id">ID</label>
+				</td>
+				<td>
+                    <input type="text" name="id" id="id">
+				</td>
+			</tr>
+			<tr>
+				<td>
+                    <label for="quantity">Quantity</label>					
+				</td>
+				<td>
+                    <input type="int" name="quantity" id="quantity">                  
+				</td>
+			</tr>
+			<tr>
+				<td>                   			
+                    <label for="date">Purchase Date</label>
+				</td>
+				<td>                                
+                    <input type="date" name="date" id="date">
+				</td>
+			</tr>
+			<tr>
+				<td>                   				
+                    <label for="date">Expiry Date</label>
+				</td>
+				<td>                              
+                    <input type="date" name="date" id="date">
+				</td>
+			</tr>
+			<tr>
+                <td>                   				
+                    <label for="img">Bill</label>
+				</td>
+				<td>                  
+                    <input type="image" name="bill" id="bill">
+				</td>
+			</tr>
+			<tr>
+				<td>                 
+                    <label for="Write Note">Note</label>
+				</td>
+				<td>                       
+                    <textarea name="text" cols="" rows="" id="Write Note"></textarea>
+				</td>
+			</tr>
+			<!-- <tr>
+				<td class="field">              		
+                            <button name="submit_btn">Submit</button>                       
+				</td>
+				<td class="field">              		
+                            <button name="reset_btn">Reset</button>                       
+				</td>			
+			</tr> -->
+			
+		</form>
+	</table>
+                    <div class="field">
+                           <button name="submit_btn">Submit</button>
+                        </div>
+                        
+                        <div class="field">
+                            <button name="reset_btn">Reset</button>
+                        </div>
+     </div>                   
+</div>
+</section>
 </body>
 </html>

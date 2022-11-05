@@ -17,7 +17,7 @@ VALUES ('$u', '$p', '$u')";
 if ($conn->query($sql) === TRUE) {
     header("location:login.php");
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Error: " . $sql . "< >" . $conn->error;
 }
 
     
