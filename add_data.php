@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>add data</title>
 
     <style>
+        table, th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 *{
@@ -42,33 +46,7 @@ header{
 form{
     margin-top: 30px;
 }
-table form tr td{
-    width:140px;
-}
-.form .field{
-    position: relative;
-    height: 50px;
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 6px;
-}
-.field button{
-    height: 100%;
-    width: 100%;
-    border: none;
-    font-size: 16px;
-    font-weight: 400;
-    border-radius: 6px;
-}
-.field button{
-    color: #fff;
-    background-color: #0171d3;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-.field button:hover{
-    background-color: #016dcb;
-}
+
     </style>
 
 </head>
@@ -76,89 +54,89 @@ table form tr td{
 <section class="container">
     <div class="form">
     <div class="form-content">
-                    <header>Add New</header>
-	<table style="width:100%;margin:40px 55px 0px 55px;">
-		<form action="register.php">
-			<tr>
-				<td>
-                <label for="name">Name</label>
-				</td>
-				<td>
-                <input type="text" name="name" id="name">
-				</td>
-			</tr>
-			<tr>
-				<td>
-                    <label for="id">ID</label>
-				</td>
-				<td>
-                    <input type="text" name="id" id="id">
-				</td>
-			</tr>
-			<tr>
-				<td>
-                    <label for="quantity">Quantity</label>					
-				</td>
-				<td>
-                    <input type="int" name="quantity" id="quantity">                  
-				</td>
-			</tr>
-			<tr>
-				<td>                   			
-                    <label for="date">Purchase Date</label>
-				</td>
-				<td>                                
-                    <input type="date" name="date" id="date">
-				</td>
-			</tr>
-			<tr>
-				<td>                   				
-                    <label for="date">Expiry Date</label>
-				</td>
-				<td>                              
-                    <input type="date" name="date" id="date">
-				</td>
-			</tr>
-			<tr>
-                <td>                   				
-                    <label for="img">Bill</label>
-				</td>
-				<td>                  
-                    <input type="file" name="bill" id="bill" style="box-sizing: unset;">
-				</td>
-			</tr>
-			<tr>
-				<td>                 
-                    <label for="Write Note">Note</label>
-				</td>
-				<td>                       
-                    <textarea name="text" cols="" rows="" id="Write Note"></textarea>
-				</td>
-			</tr>
-			<!-- <tr>
-				<td class="field">              		
-                            <button name="submit_btn">Submit</button>                       
-				</td>
-				<td class="field">              		
-                            <button name="reset_btn">Reset</button>                       
-				</td>			
-			</tr> -->
-			
-		</form>
-	</table>
-                    <div style="padding: 3vh 10vh;
-    display: flex;
-    justify-content: space-between;">
-                    <div class="field" style="width: 140px;">
-                           <button name="submit_btn">Save</button>
-                        </div>
-                        
-                        <div class="field" style="width: 140px;">
-                            <button name="reset_btn">Reset</button>
-                        </div>
-                    </div>
-     </div>                   
+    <header>PRODUCTS</header>
+    <table style="width:100%">
+    <thead>
+            <tr>
+                <th>Name</th>
+                <th>I'd</th>
+                <th>Quantity</th>
+                <th>Purchase Date</th>
+                <th>Expiry Date</th>
+                <th>Bill</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+   <tbody>
+        <tr>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+        </tr>
+        <tr>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum</td>
+        </tr>
+   </tbody>
+    </table>
+    </div>
 </div>
 </section>
+
+
 </body>
 </html>
