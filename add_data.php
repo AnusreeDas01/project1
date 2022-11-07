@@ -12,7 +12,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -41,6 +41,9 @@ header{
 }
 form{
     margin-top: 30px;
+}
+table form tr td{
+    width:140px;
 }
 .form .field{
     position: relative;
@@ -74,7 +77,7 @@ form{
     <div class="form">
     <div class="form-content">
                     <header>Add New</header>
-	<table>
+	<table style="width:100%;margin:40px 55px 0px 55px;">
 		<form action="register.php">
 			<tr>
 				<td>
@@ -121,7 +124,7 @@ form{
                     <label for="img">Bill</label>
 				</td>
 				<td>                  
-                    <input type="image" name="bill" id="bill">
+                    <input type="file" name="bill" id="bill" style="box-sizing: unset;">
 				</td>
 			</tr>
 			<tr>
@@ -143,13 +146,17 @@ form{
 			
 		</form>
 	</table>
-                    <div class="field">
-                           <button name="submit_btn">Submit</button>
+                    <div style="padding: 3vh 10vh;
+    display: flex;
+    justify-content: space-between;">
+                    <div class="field" style="width: 140px;">
+                           <button name="submit_btn">Save</button>
                         </div>
                         
-                        <div class="field">
+                        <div class="field" style="width: 140px;">
                             <button name="reset_btn">Reset</button>
                         </div>
+                    </div>
      </div>                   
 </div>
 </section>
